@@ -7,16 +7,37 @@
 }
 
 body{
-    background-color: black;
+    background: #200122;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     font-family: 'Poppins';
 }
 
-h1{
+.titre{
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #200122 , #2E011C);
+    color: whitesmoke;
     text-align: center;
-    margin-top: 20px;
+    z-index: 99;
+}
+
+a{
+    color: whitesmoke;
+}
+
+.instructions{
+    text-align: center;
+    margin-top: 100px;
 }
 
 form{
@@ -29,12 +50,13 @@ form{
 input{
     border-radius: 5px;
     width: 280px;
+    height: 30px;
+    border: 3px solid black;
     margin-left: auto;
     margin-right: auto;
-}
-
-input::placeholder{
     text-align: center;
+    text-transform: uppercase;
+    cursor: text;
 }
 
 button{
@@ -45,24 +67,55 @@ button{
     margin-right: auto;
     margin-top: 10px;
     cursor: pointer;
+    font-size: larger;
+    border: 3px solid black;
 }
 
 button:hover{
-    background-color: gainsboro;
+    background-color: silver;
 }
 
 #photos{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     justify-content: center;
+    width: auto;
+    position: relative;
+}
+
+#photos::before{
+    position: absolute;
+    border-radius: 5px;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.6;
+    z-index: -1;
 }
 
 .rover-photo {
-    width: 300px; /* Changer la taille selon vos besoins */
-    height: auto; /* Pour maintenir le rapport hauteur/largeur */
-    margin: 5px; /* Espacement entre les photos */
+    width: 300px;
+    height: auto;
+    margin: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
+
+.rover-photo:hover{
+    transform: scale(1.04);
+}
+
+@media(max-width: 767px){
+    #photos{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
