@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+form{
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border-radius: 5px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+button{
+    border-radius: 5px;
+    height: 40px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: gainsboro;
+}
+
+#photos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.rover-photo {
+    width: 300px; /* Changer la taille selon vos besoins */
+    height: auto; /* Pour maintenir le rapport hauteur/largeur */
+    margin: 5px; /* Espacement entre les photos */
+}
