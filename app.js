@@ -41,4 +41,20 @@ function displayPhotos(photos) {
         photoContainer.appendChild(manifestInfo);
         photosContainer.appendChild(imgElement);
     });
-}
+};
+
+// Ajout possibilité d'ouvrir photos en plein écran
+document.getElementById('photos').addEventListener('click', function(event) {
+    if (event.target.tagName === 'IMG') {
+        const fullScreenOverlay = document.getElementById('fullScreenOverlay');
+        const fullScreenImage = document.getElementById('fullScreenImage');
+
+        fullScreenImage.src = event.target.src;
+        fullScreenOverlay.style.display = 'block';
+    }
+});
+
+document.getElementById('closeButton').addEventListener('click', function() {
+    document.getElementById('fullScreenOverlay').style.display = 'none';
+});
+
