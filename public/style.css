@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    background: #12100E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #12100E, #030514);
+    background: linear-gradient(to bottom, #12100E, #030514);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+}
+
+.titre{
+    position: sticky;
+    width: 100vw;
+    height: auto;
+    font-weight: bold;
+    background: transparent;
+    color: whitesmoke;
+    text-align: center;
+    z-index: 99;
+}
+
+h1{
+    font-size: 48px;
+}
+
+a{
+    color: whitesmoke;
+}
+
+p{
+    margin-bottom: 10px;
+}
+
+.instructions{
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
+form{
+    text-align: center;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border-radius: 5px;
+    width: 280px;
+    height: 30px;
+    border: 3px solid black;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: text;
+}
+
+button{
+    border-radius: 5px;
+    height: 35px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: medium;
+    border: 3px solid black;
+}
+
+button:hover{
+    background-color: silver;
+}
+
+#photos{
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    width: auto;
+    height: fit-content;
+    position: relative;
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.8);
+    scrollbar-width: 0;
+    border-radius: 5px;
+}
+
+#photos::-webkit-scrollbar{
+    display: none;
+}
+
+.rover-photo {
+    width: 300px;
+    height: auto;
+    margin: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.rover-photo:hover{
+    transform: scale(1.04);
+}
+
+/* Styles pour le plein écran */
+#fullScreenOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fond noir semi-transparent */
+    z-index: 9999;
+}
+
+#fullScreenImage {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+#closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10000;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.planet{
+    position: absolute;
+    width: 100vw;
+    aspect-ratio: 1/1;
+    background: url(Mars.svg) center center / contain no-repeat;
+    top: 50%;
+    animation: rotation 300s infinite linear;
+    z-index: -1;
+    filter: drop-shadow(0 0 40px rgb(213, 219, 129));
+}
+
+
+@media(max-width: 767px){
+    #photos{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
