@@ -151,6 +151,65 @@ button:hover{
     z-index: 10000;
 }
 
+.stars-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+@keyframes shining {
+    from {
+      filter: blur(5px);
+    }
+    to {
+      filter: blur(9px);
+    }
+  }
+
+.star{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.star::before{
+    content: '*';
+    font-size: 36px;
+    position: absolute;
+    filter: blur(5px);
+    animation: shining 3s infinite linear alternate;
+}
+
+.star-1{
+    transform: translate(-50px, 150px);
+}
+
+.star-2{
+    transform: translate(-100px, 0px);
+}
+
+.star-3{
+    transform: translate(0px, 40px);
+}
+
+.star-4{
+    transform: translate(-10px, 0px);
+}
+
+.star-5{
+    transform: translate(-50px, 100px);
+}
+
+.star-6{
+    transform: translate(-50px, 0px);
+}
+
+.star-7{
+    transform: translate(-25px, 190px);
+}
+
 @keyframes rotation {
     from {
       transform: rotate(0deg);
