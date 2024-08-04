@@ -23,6 +23,7 @@ function displayPhotos(photos) {
     const body = document.body;
     photosContainer.innerHTML = '';
     photosContainer.style.display='grid';
+    photosContainer.style.height='fit-content';
 
     if (photos.length === 0) {
         photosContainer.innerHTML = '<p>Aucune photo disponible pour cette date.</p>';

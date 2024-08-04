@@ -8,16 +8,19 @@
 
 body{
     background: #12100E;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #12100E, #030514);
-    background: linear-gradient(to bottom, #12100E, #030514);
+    background: -webkit-linear-gradient(to top, #00092b, #030514);
+    background: linear-gradient(to top, #00092b, #030514);
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
-    overflow: hidden;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     font-family: 'Poppins';
+}
+
+body::-webkit-scrollbar{
+    display: none;
 }
 
 .titre{
@@ -91,22 +94,13 @@ button:hover{
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
     padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px auto;
     justify-content: center;
     width: auto;
-    height: fit-content;
     position: relative;
-    overflow: scroll;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
     scrollbar-width: 0;
     border-radius: 5px;
-}
-
-#photos::-webkit-scrollbar{
-    display: none;
 }
 
 .rover-photo {
@@ -172,6 +166,7 @@ button:hover{
     width: 10px;
     border-radius: 50%;
     position: relative;
+    position: fixed;
 }
 
 .star::before{
@@ -183,31 +178,31 @@ button:hover{
 }
 
 .star-1{
-    transform: translate(-50px, 150px);
+    transform: translate(-700px, 150px);
 }
 
 .star-2{
-    transform: translate(-100px, 0px);
+    transform: translate(-500px, 0px);
 }
 
 .star-3{
-    transform: translate(0px, 40px);
+    transform: translate(-230px, 80px);
 }
 
 .star-4{
-    transform: translate(-10px, 0px);
+    transform: translate(-10px,-10px);
 }
 
 .star-5{
-    transform: translate(-50px, 100px);
+    transform: translate(250px, 100px);
 }
 
 .star-6{
-    transform: translate(-50px, 0px);
+    transform: translate(450px, -20px);
 }
 
 .star-7{
-    transform: translate(-25px, 190px);
+    transform: translate(650px, 190px);
 }
 
 @keyframes rotation {
@@ -220,14 +215,14 @@ button:hover{
   }
 
 .planet{
-    position: absolute;
+    position: fixed;
     width: 100vw;
     aspect-ratio: 1/1;
-    background: url(Mars.svg) center center / contain no-repeat;
+    background: url(mars.png) center center / contain no-repeat;
     top: 50%;
     animation: rotation 300s infinite linear;
     z-index: -1;
-    filter: drop-shadow(0 0 40px rgb(213, 219, 129));
+    filter: drop-shadow(0 0 40px rgb(220, 179, 46));
 }
 
 
