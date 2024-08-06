@@ -21,6 +21,7 @@ body{
 
 body::-webkit-scrollbar{
     display: none;
+    font-size: 16px;
 }
 
 .titre{
@@ -34,8 +35,14 @@ body::-webkit-scrollbar{
     z-index: 99;
 }
 
-h1{
-    font-size: 48px;
+.logo{
+    font-size: 3rem;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 a{
@@ -48,7 +55,7 @@ p{
 
 .instructions{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 90px;
     padding-left: 75px;
     padding-right: 75px;
 }
@@ -228,7 +235,7 @@ button:hover{
 
 @media(max-width: 767px){
     #photos{
-        display: grid;
+        display: none;
         grid-template-columns: repeat(1, 1fr);
     }
   }

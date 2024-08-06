@@ -53,7 +53,7 @@ document.getElementById('photos').addEventListener('click', function(event) {
         const fullScreenImage = document.getElementById('fullScreenImage');
 
         fullScreenImage.src = event.target.src;
-        fullScreenOverlay.style.display = 'block';
+        fullScreenOverlay.style.display = 'flex';
     }
 });
 
@@ -61,3 +61,13 @@ document.getElementById('closeButton').addEventListener('click', function() {
     document.getElementById('fullScreenOverlay').style.display = 'none';
 });
 
+// Ajout du scroll au haut de page au clic sur le logo
+
+const scrollToTop = document.querySelector(".logo");
+scrollToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    })
+});
+scrollToTop();
